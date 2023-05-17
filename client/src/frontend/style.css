@@ -2,6 +2,7 @@ body{
     padding: 0;
     margin: 0;
     height: 100vh;
+    display: flex;
     justify-self: center;
     align-items: center;
     background: #23e3c2;
