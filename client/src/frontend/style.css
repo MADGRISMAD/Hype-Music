@@ -7,14 +7,6 @@ body{
     align-items: center;
     background: #23e3c2;
 }
-.section{
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .slider{
     width: 800px;
     height: 500px;
