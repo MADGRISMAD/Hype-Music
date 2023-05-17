@@ -14,7 +14,7 @@
   }
 
   .slide {
-    position: relative;
+    position: center;
     flex: 0 0 100%;
     width: 200%;
     height: 1000px;
