@@ -1,0 +1,66 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px; /* Ajusta la altura de la navbar según tus necesidades */
+    background-color: #ffffff; /* Color de fondo de la navbar */
+  }
+  
+  .navbar-logo img {
+    height: 40px; /* Ajusta la altura del logo según tus necesidades */
+    width: auto;
+  }
+  
+  .navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar-menu li {
+    margin-right: 10px; /* Ajusta el espaciado entre los elementos del menú según tus necesidades */
+  }
+  
+  .navbar-menu li:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último elemento del menú */
+  }
+  
+  .navbar-menu a {
+    text-decoration: none;
+    color: #000000; /* Color del texto del menú */
+    font-size: 16px; /* Ajusta el tamaño de fuente según tus necesidades */
+  }
+  
+  
+  .explorar {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas cuando no hay suficiente espacio */
+    justify-content: flex-start; /* Alinea los elementos a la izquierda */
+    gap: 10px; /* Espaciado entre los posts */
+  }
+  
+  .post {
+    position: relative;
+    flex: 0 0 calc(33.33% - 10px); /* Ajusta el ancho de cada post según tus necesidades */
+    border-radius: 8px; /* Bordes redondeados para los elementos */
+    overflow: hidden; /* Oculta cualquier contenido que exceda el tamaño del contenedor */
+  }
+  
+  .reel {
+    background-color: #ff0000; /* Color de fondo para los reels */
+    color: #ffffff; /* Color de texto para los reels */
+    padding: 10px; /* Ajusta el espaciado interno según tus necesidades */
+    height: 0;
+    padding-bottom: calc(100% * 16 / 9); /* Proporción 9:16 */
+  }
+  
+  .foto {
+    background-color: #000000; /* Color de fondo para las fotos */
+    color: #ffffff; /* Color de texto para las fotos */
+    padding: 10px; /* Ajusta el espaciado interno según tus necesidades */
+    height: 0;
+    padding-bottom: 100%; /* Proporción 1:1 */
+  }
+  
+  
