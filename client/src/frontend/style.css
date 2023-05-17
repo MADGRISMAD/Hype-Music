@@ -20,10 +20,9 @@ body{
 }
 .slide input{
     display: none;
-
 }
 .st{
-    width: 800px;
+    width: 20%;
     transition: 2s;
 }
 .st img{
@@ -34,8 +33,9 @@ body{
     position: absolute;
     width: 800px;
     margin-top: -40px;
-    justify-content: center;
     display: flex;
+    justify-content: center;
+
 }
 .m-btn{
     border: 2px solid #23e3c2;
@@ -44,11 +44,11 @@ body{
     cursor: pointer;
     transition: 1s;
 }
-.m-btn:not(:last-chi){
+.m-btn:not(:last-child){
     margin-right: 30px;
 }
 .m-btn:hover{
-    background-color: #23e3c2;
+    background: #23e3c2;
 }
 #radio1:checked ~.first{
     margin-left: 0;
@@ -65,9 +65,9 @@ body{
 
 .nav-auto{
     position: absolute;
+    display: flex;
     width: 800px;
     margin-top: 460px;
-    display: flex;
     justify-content: center;
 }
 .nav-auto div{
@@ -77,8 +77,7 @@ body{
     transition: 1s;
 }
 .nav-auto div:not(:last-child){
-    margin-right: 30px;
-    justify-content: center;
+    margin-right: 40px;
 }
 #radio1:checked ~.nav-auto .a-b1{
     background-color: #23e3c2;
