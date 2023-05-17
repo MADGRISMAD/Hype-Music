@@ -14,10 +14,10 @@
   }
 
   .slide {
-    position: center;
+    position: relative;
     flex: 0 0 100%;
     width: 200%;
-    height: 1000px;
+    height: 100%;
   }
 
   .slide img {
