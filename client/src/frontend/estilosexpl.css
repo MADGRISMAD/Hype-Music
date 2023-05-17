@@ -1,9 +1,6 @@
 body {
     background-color: #ffffff;
   }
-  body {
-    background-color: #ffffff;
-  }
   
   span {
     font-size: 14px;
@@ -16,27 +13,26 @@ body {
   }
   
   .navbar {
-    display: flex;
-    justify-content: center; /* Alinea el logo al centro */
-    align-items: center;
-    height: 60px;
-    background-color: transparent;
-    transition: background-color 0.3s ease;
     position: sticky;
     top: 0;
     z-index: 100;
+    height: 60px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
   }
   
   .navbar-logo {
-    flex: 0 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
   
   .navbar-logo img {
     height: 40px;
     width: auto;
     display: block;
-    margin: 0; /* Eliminado el 'auto' para ajustar el margen a 0 */
-    border-radius: 50%; /* Agregado el redondeo de bordes */
+    margin: 0;
+    border-radius: 50%;
   }
   
   .navbar-menu {
@@ -91,6 +87,7 @@ body {
   .user-name {
     font-size: 14px;
   }
+  
   
   .explorar {
     display: grid;
