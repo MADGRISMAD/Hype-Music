@@ -64,9 +64,9 @@
       container.style.transform = `translateX(${translateX}px)`;
     }
     
-    function Slide1() {  goToSlide(0); let currentIndex = 0;}
-    function Slide2() {  goToSlide(1); let currentIndex = 1;}
-    function Slide3() {  goToSlide(2); let currentIndex = 2;}
+    function Slide1() {  goToSlide(0); startSlider();}
+    function Slide2() {  goToSlide(1); startSlider();}
+    function Slide3() {  goToSlide(2); startSlider();}
     
     function nextSlide() {
       const nextIndex = (currentIndex + 1) % slides.length;
