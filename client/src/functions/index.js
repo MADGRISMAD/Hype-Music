@@ -3,11 +3,11 @@ export const getIndex = async() => {
         const res = await fetch("http://localhost:8080/", {
             method: "GET",
             headers: {
-                "Accept": "applcation/json",
-                "Content-Type": "application/json"
+                Accept: "application/json",
+                "Content-Type": "application/json",
             },
         });
 
         return await res.json();
-    }catch(err) {}
+    }catch(err) {console.log(err);}
 }

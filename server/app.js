@@ -21,10 +21,12 @@ app.use(cors({origin: true, credentials: true}));
 
 // routes
 const indexRouter = require("./routes/index");
+app.use("/", indexRouter);
 
 // port
 const port = process.env.PORT || 8080;
 
 //  listener
-const server = app.listenerCount(port, () => console.log("Server running on port " + PORT)
+const server = app.listen(port, () => 
+console.log("Server running on port " + port)
 );
