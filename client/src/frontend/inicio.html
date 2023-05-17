@@ -69,7 +69,7 @@
     function Slide3() {  goToSlide(2); let currentIndex = 2;}
     
     function nextSlide() {
-      const nextIndex = (currentIndex - 1) % slides.length;
+      const nextIndex = (currentIndex + 1) % slides.length;
       goToSlide(nextIndex);
     }
     
