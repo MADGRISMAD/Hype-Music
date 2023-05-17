@@ -57,8 +57,8 @@ const slides = Array.from(document.querySelectorAll('.slide'));
 let currentIndex = 0;
 let intervalId;
 
-function goToSlide(index) {
-    currentIndex = index;
+function goToSlide(Inicio) {
+    currentIndex = Inicio;
     const slideWidth = slides[currentIndex].offsetWidth;
     const translateX = -currentIndex * slideWidth;
     container.style.transform = `translateX(${translateX}px)`;
