@@ -500,151 +500,76 @@
     width: 40px; /* Ajusta el tamaño del logo cuando el menú se cierra */
   }
   
-  .contenedor-TOP{
+  .Contenedor-info{
     width: 98.5%;
-    height: 180px;
+    height: 30%;
     background-color: transparent;
     margin-top: 30px;
     margin-left: 10px;
     display: flex;
     flex-direction:row;
-    border-radius: 18px;
+    /*border-radius: 18px;*/
   }
-  .Top{
-    width: 30%;
+  .Contenedor-Musica{
+    width: 98.5%;
     height: 70%;
-    background-color: rgba(0,0,0,0.25);
-    margin-top: 20px;
-    margin-right: 25px;
-    display: flex;
+    background-color: transparent;
+    margin-left: 10px;
     flex-direction:row;
+  }
+  .contenedor{
+    width: 98.5%;
+    height: 100%;
+    background-color: rgba(248, 248, 248, 0.2);
+    margin-left: 10px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction:column;
     border-radius: 18px;
   }
-  .cont-imagen{
-    width: 17%;
-    height: 60%;
-    background-color: transparent;
-    margin-top: 15px;
-    margin-left: 25px;
-    border-radius: 18px;
+  .cont-img{
+      width: 15%;
+      height: 80%;
+      background-color: transparent;
+      margin-left: 10px;
+      margin-top: 20px;
+      display: flex;
+      border-radius: 18px;
   }
   .cont-text{
-    width: 70%;
-    height: 50%;
-    background-color: transparent;
-    margin-top: 25px;
-    margin-left: 10px;
-    opacity: 1;
-  }
-  
-  
-  .contenedor-Albumes{
-    width: 98.5%;
-    height: 260px;
-    background-color: transparent;
-    margin-left: 10px;
-    display: flex;
-    flex-direction:row;
-  }
-  .album{
-    width: 10%;
+    width: 40%;
     height: 80%;
-    background-color: rgba(238, 230, 230, 0.25);
-    margin-top: 25px;
-    margin-left: 20px;
-    display: flex;
-    flex-direction:column;
-    border-radius: 18px;
-  }
-  .image-album{
-    width: 80%;
-    height: 50%;
     background-color: transparent;
-    margin-top: 10px;
-    margin-left: 17px;
-    border-radius: 18px;
-  }
-  .album-txt{
-    width: 80%;
-    height: 20%;
-    background-color: transparent;
+    margin-left: 10px;
     margin-top: 20px;
-    margin-left: 17px;
-  }
-  
-  
-  .contenedor-Canciones{
-    width: 98.5%;
-    height: 220px;;
-    background-color: transparent;
+    display: flex;
+    border-radius: 18px;
+    font-size: xx-large;
+}
+.Musica1{
+    width: 98%;
+    height: 7%;
+    background-color: rgba(248, 248, 248, 0.603);
     margin-left: 10px;
     display: flex;
-    flex-direction:row;
-  }
-  
-  .contenedorMusical{
-    width: 40%;
-    height: 80%;
-    background-color: rgba(0, 0, 0, 0.459);
-    margin-top: 25px;
-    margin-left: 20px;
-    display: flex;
-    flex-direction:row;
-    border-radius: 18px;
-  }
-  
-  .Cancion-contenedor{
-    width: 90%;
-    height: 40%;
-    background-color: rgba(255, 255, 255, 0.459);
-    margin-top: 10px;
-    margin-left: 20px;
-    display: flex;
-    flex-direction:row;
-    border-radius: 18px;
-  }
-  
-  
-  .contenedor2{
-    width: 40%;
-    height: 90%;
-    background-color: transparent;
-    margin-top: 10px;
-    margin-left: 20px;
-    display: flex;
-    flex-direction:column;
-  }
-  
-  .image-cancio{
-    width: 18%;
-    height: 80%;
-    background-color: transparent;
-    margin-top: 5px;
-    margin-left: 5px;
-    border-radius: 18px;
-  }
-  .cancion-txt{
-    width: 70%;
-    height: 50%;
-    background-color: transparent;
-    margin-top: 12px;
-    margin-left: 5px;
-  }
-  
-  
-  .contenedor-reels{
-    width: 98.5%;
-    height: 400px;
-    background-color: transparent;
-    margin-left: 10px;
-    display: flex;
-    border-radius: 18px;
-  }
-  .reels{
-    width: 9%;
-    height: 86%;
-    background-color: transparent;
-    margin-top: 30px;
-    margin-left: 20px;
-    border-radius: 18px;
-  }
+    justify-content: space-between;
+    align-items: center;
+    padding-inline-end: 15px;
+    padding-inline-start: 15px;
+}
+.Musica2{
+  width: 98%;
+  height: 7%;
+  background-color: rgba(7, 7, 7, 0.075);
+  margin-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline-end: 15px;
+  padding-inline-start: 15px;
+}
+
+.Musica1:hover, .Musica2:hover{
+  /* Estilos cuando el mouse está sobre el contenedor */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.993); /* Sombra en el contenedor */
+}
