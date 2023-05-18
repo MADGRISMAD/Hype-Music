@@ -62,7 +62,6 @@ body {
   text-align: center;
   display: grid;
   place-items: center;
-  padding: 28px;
   background-color: #B1CFC8;
   transform: rotateY(180deg);
   color: #000; /* Agrega un color de texto explícito */
