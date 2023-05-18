@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="estilos.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Inicio</title>
+  </head>
+  <body>
+    <nav class="sidebar close">
+      <header>
+        <div class="image-text">
+          <span class="image">
+            <img src="/client/src/frontend/logo.png" alt="" />
+          </span>
+        </div>
+        <i class="bx bx-chevron-right toggle"></i>
+      </header>
+      <div class="menu-bar">
+        <div class="menu">
+          <li class="search-box">
+            <i class="bx bx-search icon"></i>
+            <input type="text" placeholder="Buscar..." />
+          </li>
+          <ul class="menu-links">
+            <li class="nav-link">
+              <a href="/client/src/frontend/inicio.html">
+                <i class="bx bx-home-alt icon"></i>
+                <span class="text nav-text">Inicio</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="/client/src/frontend/explorar.html">
+                <i class="bx bx-bar-chart-alt-2 icon"></i>
+                <span class="text nav-text">Descubrir</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="bottom-content">
+          <li class="">
+            <a href="#">
+              <i class="bx bx-log-out icon"></i>
+              <span class="text nav-text">Salir</span>
+            </a>
+          </li>
+          <li class="mode">
+            <div class="sun-moon">
+              <i class="bx bx-moon icon moon"></i>
+              <i class="bx bx-sun icon sun"></i>
+            </div>
+            <span class="mode-text text">Modo Oscuro</span>
+            <div class="toggle-switch">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </div>
+      </div>
+    </nav>
+
+    <section class="home"></section>
+    <script>
+      const body = document.querySelector("body"),
+        sidebar = body.querySelector("nav"),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
+      toggle.addEventListener("click", () => {
+        sidebar.classList.toggle("close");
+      });
+      searchBtn.addEventListener("click", () => {
+        sidebar.classList.remove("close");
+      });
+      modeSwitch.addEventListener("click", () => {
+        body.classList.toggle("dark");
+
+        if (body.classList.contains("dark")) {
+          modeText.innerText = "Light mode";
+        } else {
+          modeText.innerText = "Dark mode";
+        }
+      });
+    </script>
+    <div>
+      <script>
+        function flipCard(card) {
+          card.classList.toggle("flipped");
+        }
+        const container = document.querySelector(".slider-container");
+        const slides = Array.from(document.querySelectorAll(".slide"));
+        let currentIndex = 0;
+        let intervalId;
+
+        function goToSlide(index) {
+          currentIndex = index;
+          const slideWidth = slides[currentIndex].offsetWidth;
+          const translateX = -currentIndex * slideWidth;
+          container.style.transform = `translateX(${translateX}px)`;
+        }
+
+        function Slide1() {
+          goToSlide(0);
+          startSlider();
+        }
+
+        function Slide2() {
+          goToSlide(1);
+          startSlider();
+        }
+
+        function Slide3() {
+          goToSlide(2);
+          startSlider();
+        }
+
+        function nextSlide() {
+          const nextIndex = (currentIndex + 1) % slides.length;
+          goToSlide(nextIndex);
+        }
+
+        function startSlider() {
+          clearInterval(intervalId); // Limpia el intervalo anterior antes de iniciar uno nuevo
+          intervalId = setInterval(nextSlide, 2000); // Cambia la diapositiva cada 2 segundos (2000 ms)
+        }
+
+        function stopSlider() {
+          clearInterval(intervalId);
+        }
+
+        startSlider(); // Inicia el slider automáticamente
+
+        // Agrega los siguientes event listeners para pausar/reanudar el slider cuando se haga clic en las diapositivas o en los botones de navegación
+        container.addEventListener("mouseenter", stopSlider);
+        container.addEventListener("mouseleave", startSlider);
+        document
+          .querySelector(".slider-navigation")
+          .addEventListener("mouseenter", stopSlider);
+        document
+          .querySelector(".slider-navigation")
+          .addEventListener("mouseleave", startSlider);
+      </script>
+    </div>
+    <head>
+      <title>Página de Biografía del Artista</title>
+      <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <div class="container">
+      <div class="video-container">
+        <video
+          src="/client/src/media/explorar/short4.mp4"
+          autoplay
+          loop
+          muted
+        ></video>
+      </div>
+      <div class="bio-container">
+        <div class="bio-content">
+          <h1>Biografía del Artista</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            vestibulum, odio a viverra eleifend, massa mi maximus sem, in semper
+            nisl lacus ut velit. Sed eu massa id tellus auctor finibus id sit
+            amet justo. Nulla facilisi. Suspendisse tincidunt pharetra turpis id
+            egestas. In ac urna tristique, consequat ipsum non, viverra mi. In
+            sed lectus et mi dignissim dignissim non eu risus. Mauris pharetra
+            sollicitudin magna, ut tincidunt dui porta nec. In egestas sapien ut
+            rhoncus malesuada. Praesent faucibus varius tortor, at malesuada
+            arcu aliquam ac. Vestibulum rhoncus elit at urna tincidunt, eu
+            consequat justo semper. Morbi quis dapibus magna.
+          </p>
+          <p>
+            Proin efficitur est et erat euismod, a luctus tellus cursus. Nullam
+            quis felis tincidunt, vestibulum elit nec, auctor dolor. Donec
+            eleifend felis ac est euismod, a facilisis lectus lobortis. Nullam
+            eleifend rutrum aliquet. Praesent id ligula sed nisi interdum
+            gravida ac sed est. Maecenas ut magna eu leo sollicitudin
+            pellentesque eu et ante. Fusce ac dui nec metus rhoncus elementum id
+            in nibh. Etiam vestibulum augue risus, in sollicitudin leo rutrum
+            vitae. Aenean lacinia erat eget posuere tempus.
+          </p>
+          <p>
+            Phasellus eu ipsum id nisl finibus aliquet. Nulla interdum venenatis
+            tristique. Phasellus sit amet mauris sed sapien bibendum cursus ut
+            in sem. Maecenas in dui nec est interdum gravida et sit amet nisi.
+            Donec in enim a risus maximus pellentesque. Vestibulum nec nulla mi.
+            Sed sem nunc, feugiat vel scelerisque id, tristique id justo. Donec
+            rutrum, mauris non pulvinar efficitur, orci dui condimentum mi,
+            vitae laoreet orci risus non risus. In sollicitudin arcu non nulla
+            interdum, a faucibus enim efficitur. Mauris nec erat ut enim
+            efficitur scelerisque. Ut a lacus eu odio interdum sagittis ut eget
+            dui. Pellentesque sed pulvinar massa. Sed vel risus sit amet quam
+            sagittis condimentum id vel arcu.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
