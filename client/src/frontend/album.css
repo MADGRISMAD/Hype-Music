@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Arimo', sans-serif;
   }
   
   body {
@@ -544,7 +545,8 @@
     margin-top: 20px;
     display: flex;
     border-radius: 18px;
-    font-size: xx-large;
+    display: flex;
+    flex-direction:column;
 }
 .Musica1{
     width: 98%;
@@ -572,4 +574,26 @@
 .Musica1:hover, .Musica2:hover{
   /* Estilos cuando el mouse está sobre el contenedor */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.993); /* Sombra en el contenedor */
+}
+.Boton{
+  width: 17%;
+  height: 20%;
+  background-color: rgba(7, 7, 7, 0.075);
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline-start: 10px;
+  border-radius: 18px;
+  text-align: center;
+}
+.Boton:hover{
+  /* Estilos cuando el mouse está sobre el contenedor */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.993); /* Sombra en el contenedor */
+}
+.vertical{
+  transform: rotate(-90deg);
+  max-width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
 }
