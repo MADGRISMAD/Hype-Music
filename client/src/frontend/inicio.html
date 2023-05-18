@@ -9,7 +9,7 @@
       href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <title>Inicio</title>
+    <title>Explorar</title>
   </head>
   <body>
     <nav class="sidebar close">
@@ -94,6 +94,15 @@
 
     <section class="home"></section>
     <script>
+        var inputSearch = document.getElementById("inputSearch"); //Asigna la barra de búsqueda con un ID
+        inputSearch.addEventListener("keypress", function(e) { //Cuando das enter, redireccionar a la página de búsqueda
+          if(e.keyCode === 13){
+            e.preventDefault();
+            window.location.replace("/client/src/frontend/search.html?q=" + inputSearch.value);
+          }
+
+        });
+
       const body = document.querySelector("body"),
         sidebar = body.querySelector("nav"),
         toggle = body.querySelector(".toggle"),
@@ -218,7 +227,6 @@
             <h3>Lover - Taylor Swift</h3>
           </div>
           <div class="reel">
-            <video src="/client/src/media/explorar/short6.mp4" autoplay loop muted></video>
             <h3>S.O.S - SZA</h3>
           </div>
         </div>
@@ -273,14 +281,6 @@
 
         startSlider(); // Inicia el slider automáticamente
         
-        var inputSearch = document.getElementById("inputSearch"); //Asigna la barra de búsqueda con un ID
-        inputSearch.addEventListener("keypress", function(e) { //Cuando das enter, redireccionar a la página de búsqueda
-          if(e.key === "Enter"){
-            e.preventDefault();
-            window.location.replace("http://localhost:3000/search?q=" + inputSearch.value);
-          }
-
-        });
         // Agrega los siguientes event listeners para pausar/reanudar el slider cuando se haga clic en las diapositivas o en los botones de navegación
         container.addEventListener("mouseenter", stopSlider);
         container.addEventListener("mouseleave", startSlider);

@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css';
 import Header from "./Header";
 import Search from "./Search";
+import Explorar from "./Explorar";
 import Play from "./Play";
 import Sidebar from "./Sidebar";
 import Home from "./Home";
@@ -21,6 +22,7 @@ const App = () => {
           <Routes>
             <Route>
               <Route exact path = "/" element={<Home />}/>
+              <Route exact path = "/descubrir" element={<Explorar />}/>
               <Route exact path = "/search" element={<Search />}/>
               <Route exact path = "/play" element={<Play />}/>
             </Route>

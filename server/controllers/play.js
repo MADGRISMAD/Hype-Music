@@ -1,10 +1,9 @@
 exports.getSong = async(req,res) => {
-    const songId = new URLSearchParams(req.url).get("song");
-    const url = 'https://spotify-scraper.p.rapidapi.com/v1/track/download/soundcloud?track=' + songId;
+    const url = 'https://spotify-scraper.p.rapidapi.com/v1/track/download/soundcloud?track=' + req.query.song;
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': '039c2fc7e8msh483a1607d2f72b7p19a785jsn2311317d30ee',
+        'X-RapidAPI-Key': 'a609cc4ba2msh3df38dcc50581b9p1a30b3jsn8b9ec6cb959b',
         'X-RapidAPI-Host': 'spotify-scraper.p.rapidapi.com'
       }
     };
@@ -12,7 +11,7 @@ exports.getSong = async(req,res) => {
     try {
         const response = await fetch(url, options);
         const result = await response.text();
-        res.status(200).json(result);
+        res.status(200).json(JSON.stringify(result));
         
     } catch (error) {
         console.error(error);

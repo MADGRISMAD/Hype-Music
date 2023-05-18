@@ -2,31 +2,29 @@ import React, { useEffect } from 'react';
 import {useState, useRef } from 'react';
 
 const Sidebar = () => {
-  var body, sidebar, toggle, searchBtn, modeSwitch, modeText;
-    useEffect(() => {
-      body = document.querySelector("body");
-      sidebar = body.querySelector("nav");
-      toggle = body.querySelector(".toggle");
-      searchBtn = body.querySelector(".search-box");
-      modeSwitch = body.querySelector(".toggle-switch");
-      modeText = body.querySelector(".mode-text");
-      var double = false;
-      toggle.addEventListener("click", () => {
-        sidebar.classList.toggle("close");
-      });
-      searchBtn.addEventListener("click", () => {
-        sidebar.classList.remove("close");
-      });
-      modeSwitch.addEventListener("click", () => {
-        body.classList.toggle("dark");
-      
-        if (body.classList.contains("dark")) {
-          modeText.innerText = "Light mode";
-        } else {
-          modeText.innerText = "Dark mode";
+    const [sidebarClass,setClass] = useState("sidebar closed");
+    const [closed,setClosed] = useState(true);
+    const body = useRef(null),
+    sidebar = useRef(null),
+    toggle = useRef(null),
+    searchBtn = useRef(null),
+    modeSwitch = useRef(null),
+    modeText = useRef(null);
+    function toggleClose(){
+        console.log(closed);
+        if(closed){
+            setClosed(false);
+            return "sidebar";
+            
         }
-      });
-    }, []);
+        else{
+            setClosed(true);
+            return "sidebar closed";
+            
+        }
+            
+            
+    }
 //   modeSwitch.addEventListener("click", () => {
 //     body.classList.toggle("dark");
 
@@ -36,17 +34,19 @@ const Sidebar = () => {
 //       modeText.innerText = "Dark mode";
 //     }
 //   });
-
+  function buscar(value){
+        window.location.replace("http://localhost:3000/search?q=" + value);
+  } //Cuando das enter, redireccionar a la página de búsqueda
     return(
         <>
-    <nav class="sidebar close">
+    <nav ref={sidebar} class={sidebarClass}>
       <header>
         <div class="image-text">
           <span class="image">
             <img src={require("./logo.png")} alt="" />
           </span>
         </div>
-        <i class="bx bx-chevron-right toggle"></i>
+        <i ref={toggle} class="bx bx-chevron-right toggle" onClick={() => setClass(toggleClose())}></i>
       </header>
       <div class="menu-bar">
         <div class="menu">
@@ -62,7 +62,7 @@ const Sidebar = () => {
               </a>
             </li>
             <li class="nav-link">
-              <a href="http://localhost:3000/descubrir">
+              <a href="http://localhost:3000/descubre">
                 <i class="bx bx-bar-chart-alt-2 icon"></i>
                 <span class="text nav-text">Descubrir</span>
               </a>
@@ -70,6 +70,9 @@ const Sidebar = () => {
             
           </ul>
         </div>
+        <audio controls hidden>
+
+        </audio>
         <div class="audio-player">
           <div class = "audio-controls">
               <svg xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vertical feather feather-fast-forward"><polygon points="13 19 22 12 13 5 13 19"></polygon><polygon points="2 19 11 12 2 5 2 19"></polygon></svg>
@@ -99,10 +102,10 @@ const Sidebar = () => {
             </div>
           </li>
         </div>
-        </div>
+      </div>
     </nav>
-  </>
-    );
+        </>
+    )
 }
 
 export default Sidebar;

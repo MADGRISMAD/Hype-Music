@@ -1,49 +1,22 @@
-import React, { useEffect } from 'react';
-import {useState, useRef } from 'react';
-
-const Sidebar = () => {
-  var body, sidebar, toggle, searchBtn, modeSwitch, modeText;
-    useEffect(() => {
-      body = document.querySelector("body");
-      sidebar = body.querySelector("nav");
-      toggle = body.querySelector(".toggle");
-      searchBtn = body.querySelector(".search-box");
-      modeSwitch = body.querySelector(".toggle-switch");
-      modeText = body.querySelector(".mode-text");
-      var double = false;
-      toggle.addEventListener("click", () => {
-        sidebar.classList.toggle("close");
-      });
-      searchBtn.addEventListener("click", () => {
-        sidebar.classList.remove("close");
-      });
-      modeSwitch.addEventListener("click", () => {
-        body.classList.toggle("dark");
-      
-        if (body.classList.contains("dark")) {
-          modeText.innerText = "Light mode";
-        } else {
-          modeText.innerText = "Dark mode";
-        }
-      });
-    }, []);
-//   modeSwitch.addEventListener("click", () => {
-//     body.classList.toggle("dark");
-
-//     if (body.classList.contains("dark")) {
-//       modeText.innerText = "Light mode";
-//     } else {
-//       modeText.innerText = "Dark mode";
-//     }
-//   });
-
-    return(
-        <>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="estilos.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Inicio</title>
+  </head>
+  <body>
     <nav class="sidebar close">
       <header>
         <div class="image-text">
           <span class="image">
-            <img src={require("./logo.png")} alt="" />
+            <img src="/client/src/frontend/logo.png" alt="" />
           </span>
         </div>
         <i class="bx bx-chevron-right toggle"></i>
@@ -56,13 +29,13 @@ const Sidebar = () => {
           </li>
           <ul class="menu-links">
             <li class="nav-link">
-              <a href="http://localhost:3000/">
+              <a href="/client/src/frontend/inicio.html">
                 <i class="bx bx-home-alt icon"></i>
                 <span class="text nav-text">Inicio</span>
               </a>
             </li>
             <li class="nav-link">
-              <a href="http://localhost:3000/descubrir">
+              <a href="/client/src/frontend/explorar.html">
                 <i class="bx bx-bar-chart-alt-2 icon"></i>
                 <span class="text nav-text">Descubrir</span>
               </a>
@@ -70,12 +43,36 @@ const Sidebar = () => {
             
           </ul>
         </div>
+        <audio controls hidden>
+
+        </audio>
         <div class="audio-player">
           <div class = "audio-controls">
               <svg xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vertical feather feather-fast-forward"><polygon points="13 19 22 12 13 5 13 19"></polygon><polygon points="2 19 11 12 2 5 2 19"></polygon></svg>
               <svg xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vertical feather feather-play"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
               <svg xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vertical feather feather-rewind"><polygon points="11 19 2 12 11 5 11 19"></polygon><polygon points="22 19 13 12 22 5 22 19"></polygon></svg>
         </div>
+        <!-- Funcionalidad del control de audio -->
+        <script>
+        var inputSearch = document.getElementById("inputSearch"); //Asigna la barra de búsqueda con un ID
+        inputSearch.addEventListener("keypress", function(e) { //Cuando das enter, redireccionar a la página de búsqueda
+          if(e.keyCode === 13){
+            e.preventDefault();
+            window.location.replace("/client/src/frontend/search.html?q=" + inputSearch.value);
+          }
+
+        });
+          document.getElementById('draggable-point').draggable({
+            drag: function() {
+              var offset = $(this).offset();
+              var xPos = (100 * parseFloat($(this).css("left"))) / (parseFloat($(this).parent().css("width"))) + "%";
+            
+              $('#audio-progress-bar').css({
+                'width': xPos
+              });
+            }
+          });
+        </script>
           <div>
             
             <div id="posX"></div>
@@ -99,10 +96,24 @@ const Sidebar = () => {
             </div>
           </li>
         </div>
-        </div>
+      </div>
     </nav>
-  </>
-    );
-}
+<div class = "container">
+    <script>    
+        const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const song = urlParams.get("song");
+            fetch("http://localhost:8080/play?song=" + song, {method: "GET", headers: {"Content-Type": "application/json"},}, ).then(function(res){
+                let audio
+                res.json().then(data => {            
+                    let object = `<div class="audio"><audio controls>
+                <source src=${JSON.parse(JSON.parse(data)).soundcloudTrack.audio[0].url} type="audio/mp3"/>
+               </audio></div>`;
+                document.write(object);
+                })
+            });
+            </script>
+</div>
 
-export default Sidebar;
+</body>
+</html>

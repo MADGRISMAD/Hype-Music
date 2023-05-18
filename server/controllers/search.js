@@ -5,7 +5,8 @@ exports.getIndex = async(req,res) => {
     })
 }
 exports.search = async(req,res) => {
-    const url = 'https://spotify23.p.rapidapi.com/search/?q=eminem&type=tracks&offset=0&limit=10&numberOfTopResults=5';
+    const url = 'https://spotify23.p.rapidapi.com/search/?q='+ req.query.song +'&type=tracks&offset=0&limit=10&numberOfTopResults=5';
+    console.log(url);
     const options = {
       method: 'GET',
       headers: {
@@ -17,7 +18,8 @@ exports.search = async(req,res) => {
     try {
         const response = await fetch(url, options);
         const result = await response.text();
-        res.status(200).json(result);
+
+        res.json(result);
     } catch (error) {
         console.error(error);
     }
