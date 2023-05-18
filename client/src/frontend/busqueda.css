@@ -549,7 +549,7 @@
   .album{
     width: 10%;
     height: 80%;
-    background-color: rgba(0,0,0,0.25);
+    background-color: rgba(238, 230, 230, 0.25);
     margin-top: 25px;
     margin-left: 20px;
     display: flex;
@@ -585,7 +585,7 @@
   .contenedorMusical{
     width: 40%;
     height: 80%;
-    background-color: rgba(0, 0, 0, 0.459);;
+    background-color: rgba(0, 0, 0, 0.459);
     margin-top: 25px;
     margin-left: 20px;
     display: flex;
