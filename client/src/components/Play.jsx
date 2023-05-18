@@ -1,6 +1,5 @@
 import React from 'react';
 
-import './App.css';
 import { useState, useEffect } from 'react';
 
 // functions
@@ -18,7 +17,7 @@ const Play = () => {
       .catch((err) =>  console.log(err))
     }, [])
     return(
-        <div className="App">
+        <div className="Player">
        {song}
         </div>
     );

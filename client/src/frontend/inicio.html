@@ -25,7 +25,7 @@
         <div class="menu">
           <li class="search-box">
             <i class="bx bx-search icon"></i>
-            <input type="text" placeholder="Buscar..." />
+            <input id="inputSearch" type="text" placeholder="Buscar..." />
           </li>
           <ul class="menu-links">
             <li class="nav-link">
@@ -42,6 +42,34 @@
             </li>
             
           </ul>
+        </div>
+        <audio controls hidden>
+
+        </audio>
+        <div class="audio-player">
+          <div class = "audio-controls">
+              <svg xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vertical feather feather-fast-forward"><polygon points="13 19 22 12 13 5 13 19"></polygon><polygon points="2 19 11 12 2 5 2 19"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vertical feather feather-play"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <svg xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vertical feather feather-rewind"><polygon points="11 19 2 12 11 5 11 19"></polygon><polygon points="22 19 13 12 22 5 22 19"></polygon></svg>
+        </div>
+        <!-- Funcionalidad del control de audio -->
+        <script>
+
+          document.getElementById('draggable-point').draggable({
+            drag: function() {
+              var offset = $(this).offset();
+              var xPos = (100 * parseFloat($(this).css("left"))) / (parseFloat($(this).parent().css("width"))) + "%";
+            
+              $('#audio-progress-bar').css({
+                'width': xPos
+              });
+            }
+          });
+        </script>
+          <div>
+            
+            <div id="posX"></div>
+          </div>
         </div>
         <div class="bottom-content">
           <li class="">
@@ -244,7 +272,15 @@
         }
 
         startSlider(); // Inicia el slider automáticamente
+        
+        var inputSearch = document.getElementById("inputSearch"); //Asigna la barra de búsqueda con un ID
+        inputSearch.addEventListener("keypress", function(e) { //Cuando das enter, redireccionar a la página de búsqueda
+          if(e.key === "Enter"){
+            e.preventDefault();
+            window.location.replace("http://localhost:3000/search?q=" + inputSearch.value);
+          }
 
+        });
         // Agrega los siguientes event listeners para pausar/reanudar el slider cuando se haga clic en las diapositivas o en los botones de navegación
         container.addEventListener("mouseenter", stopSlider);
         container.addEventListener("mouseleave", startSlider);
