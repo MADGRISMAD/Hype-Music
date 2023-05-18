@@ -14,7 +14,145 @@
     color: #a09f9f;
   }
   
-
+  .navbar.scrolled {
+    background-color: rgba(27, 36, 48, 0.9);
+  }
+  
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 60px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-5%);
+  }
+  
+  .navbar-logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+    margin: 0;
+    border-radius: 50%;
+  }
+  
+  .navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar-menu li {
+    margin-right: 10px;
+  }
+  
+  .navbar-menu li:last-child {
+    margin-right: 0;
+  }
+  
+  .navbar-menu a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+  }
+  
+  .navbar-menu-left {
+    margin-right: auto;
+  }
+  
+  .navbar-menu-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar {
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+  }
+  
+  /* Resto del código CSS para el navbar */
+  .user-profile {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+  
+  .user-profile img {
+    height: 30px;
+    width: auto;
+    margin-right: 5px;
+  }
+  
+  .user-name {
+    font-size: 14px;
+  }
+  
+  .contenedor {
+    width: 100%;
+    columns: 5;
+    column-gap: 15px;
+    padding: 15px;
+  }
+  
+  img,
+  video {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  img:hover,
+  video:hover {
+    opacity: 0.8;
+    transform: translateY(-5px);
+    position: relative;
+  }
+  
+  img:hover::after,
+  video:hover::after {
+    content: 'Lorem ipsum dolor sit amet ';
+    display: block;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-5%);
+  }
+  .navbar-player .control-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .navbar-player .control-button img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .navbar-player .control-button img.playing {
+    animation: playAnimation infinite 1s;
+  }
+  
+  @keyframes playAnimation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
   /* Google Font Import - Poppins */
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
   *{
@@ -327,8 +465,9 @@
     height: 100vh;
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     z-index: -1;
   }
   
@@ -361,4 +500,151 @@
     width: 40px; /* Ajusta el tamaño del logo cuando el menú se cierra */
   }
   
+  .contenedor-TOP{
+    width: 98.5%;
+    height: 180px;
+    background-color: transparent;
+    margin-top: 30px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction:row;
+    border-radius: 18px;
+  }
+  .Top{
+    width: 30%;
+    height: 70%;
+    background-color: rgba(0,0,0,0.25);
+    margin-top: 20px;
+    margin-right: 25px;
+    display: flex;
+    flex-direction:row;
+    border-radius: 18px;
+  }
+  .cont-imagen{
+    width: 17%;
+    height: 60%;
+    background-color: transparent;
+    margin-top: 15px;
+    margin-left: 25px;
+    border-radius: 18px;
+  }
+  .cont-text{
+    width: 70%;
+    height: 50%;
+    background-color: transparent;
+    margin-top: 25px;
+    margin-left: 10px;
+    opacity: 1;
+  }
   
+  
+  .contenedor-Albumes{
+    width: 98.5%;
+    height: 260px;
+    background-color: transparent;
+    margin-left: 10px;
+    display: flex;
+    flex-direction:row;
+  }
+  .album{
+    width: 10%;
+    height: 80%;
+    background-color: rgba(0,0,0,0.25);
+    margin-top: 25px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction:column;
+    border-radius: 18px;
+  }
+  .image-album{
+    width: 80%;
+    height: 50%;
+    background-color: transparent;
+    margin-top: 10px;
+    margin-left: 17px;
+    border-radius: 18px;
+  }
+  .album-txt{
+    width: 80%;
+    height: 20%;
+    background-color: transparent;
+    margin-top: 20px;
+    margin-left: 17px;
+  }
+  
+  
+  .contenedor-Canciones{
+    width: 98.5%;
+    height: 220px;;
+    background-color: transparent;
+    margin-left: 10px;
+    display: flex;
+    flex-direction:row;
+  }
+  
+  .contenedorMusical{
+    width: 40%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.459);;
+    margin-top: 25px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction:row;
+    border-radius: 18px;
+  }
+  
+  .Cancion-contenedor{
+    width: 90%;
+    height: 40%;
+    background-color: rgba(255, 255, 255, 0.459);
+    margin-top: 10px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction:row;
+    border-radius: 18px;
+  }
+  
+  
+  .contenedor2{
+    width: 40%;
+    height: 90%;
+    background-color: transparent;
+    margin-top: 10px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction:column;
+  }
+  
+  .image-cancio{
+    width: 18%;
+    height: 80%;
+    background-color: transparent;
+    margin-top: 5px;
+    margin-left: 5px;
+    border-radius: 18px;
+  }
+  .cancion-txt{
+    width: 70%;
+    height: 50%;
+    background-color: transparent;
+    margin-top: 12px;
+    margin-left: 5px;
+  }
+  
+  
+  .contenedor-reels{
+    width: 98.5%;
+    height: 400px;
+    background-color: transparent;
+    margin-left: 10px;
+    display: flex;
+    border-radius: 18px;
+  }
+  .reels{
+    width: 9%;
+    height: 86%;
+    background-color: transparent;
+    margin-top: 30px;
+    margin-left: 20px;
+    border-radius: 18px;
+  }
