@@ -635,15 +635,15 @@ body.dark .home .text{
 .contenedor-reels{
   width: 98.5%;
   height: 400px;
-  background-color: green;
+  background-color: transparent;
   margin-left: 10px;
   display: flex;
-  flex-direction:row;
+  border-radius: 18px;
 }
 .reels{
   width: 9%;
-  height: 85%;
-  background-color: red;
+  height: 86%;
+  background-color: transparent;
   margin-top: 30px;
   margin-left: 20px;
   border-radius: 18px;
