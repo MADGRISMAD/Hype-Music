@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="estilosexpl.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <title>Inicio</title>
     <script>
       window.addEventListener("scroll", function () {
@@ -15,72 +19,185 @@
           navbar.classList.remove("scrolled");
         }
       });
+      // Obtener los botones y los elementos <img> de los GIFs
+      const playPauseButton = document.getElementById("play-pause-button");
+      const previousButton = document.getElementById("previous-button");
+      const nextButton = document.getElementById("next-button");
+      const playGif = document.querySelector(
+        '.navbar-player img[alt="Reproducir"]'
+      );
+      const previousGif = document.querySelector(
+        '.navbar-player img[alt="Anterior"]'
+      );
+      const nextGif = document.querySelector(
+        '.navbar-player img[alt="Siguiente"]'
+      );
+
+      // Agregar un event listener a los botones
+      playPauseButton.addEventListener("click", togglePlayPause);
+      previousButton.addEventListener("click", playPrevious);
+      nextButton.addEventListener("click", playNext);
+
+      // Función para alternar la reproducción y pausa del GIF
+      function togglePlayPause() {
+        if (playGif.classList.contains("playing")) {
+          playGif.classList.remove("playing");
+        } else {
+          playGif.classList.add("playing");
+        }
+      }
+
+      // Funciones para reproducir el GIF anterior y siguiente
+      function playPrevious() {
+        previousGif.classList.add("playing");
+      }
+
+      function playNext() {
+        nextGif.classList.add("playing");
+      }
     </script>
   </head>
   <body>
-    <nav class="navbar" id="navbar">
-      <div class="navbar-menu-left">
-        <ul class="navbar-menu">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#explorar">Explorar</a></li>
-        </ul>
-      </div>
-      <div class="navbar-logo">
-        <img src="logo.png" alt="Logo de la empresa" />
-      </div>
-      <div class="navbar-menu-right">
-        <input type="text" placeholder="Buscar" class="search-bar" />
-        <div class="user-profile">
-          <img
-            src="/client/src/media/explorar/imagines/pfp.jpg"
-            alt="Icono de perfil"
-          />
-          <span class="Madeline">Nombre del Usuario</span>
+    <nav class="sidebar close">
+      <header>
+        <div class="image-text">
+          <span class="image">
+            <img src="/client/src/frontend/logo.png" alt="">
+          </span>
+        </div>
+        <i class="bx bx-chevron-right toggle"></i>
+      </header>
+      <div class="menu-bar">
+        <div class="menu">
+          <li class="search-box">
+            <i class="bx bx-search icon"></i>
+            <input type="text" placeholder="Search..." />
+          </li>
+          <ul class="menu-links">
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-home-alt icon"></i>
+                <span class="text nav-text">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-bar-chart-alt-2 icon"></i>
+                <span class="text nav-text">Revenue</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-bell icon"></i>
+                <span class="text nav-text">Notifications</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-pie-chart-alt icon"></i>
+                <span class="text nav-text">Analytics</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-heart icon"></i>
+                <span class="text nav-text">Likes</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-wallet icon"></i>
+                <span class="text nav-text">Wallets</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="bottom-content">
+          <li class="">
+            <a href="#">
+              <i class="bx bx-log-out icon"></i>
+              <span class="text nav-text">Logout</span>
+            </a>
+          </li>
+          <li class="mode">
+            <div class="sun-moon">
+              <i class="bx bx-moon icon moon"></i>
+              <i class="bx bx-sun icon sun"></i>
+            </div>
+            <span class="mode-text text">Dark mode</span>
+            <div class="toggle-switch">
+              <span class="switch"></span>
+            </div>
+          </li>
         </div>
       </div>
     </nav>
+    <section class="home">
+      <div class="text">HYPE</div>
+    </section>
+    <script>
+      const body = document.querySelector("body"),
+        sidebar = body.querySelector("nav"),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
+      toggle.addEventListener("click", () => {
+        sidebar.classList.toggle("close");
+      });
+      searchBtn.addEventListener("click", () => {
+        sidebar.classList.remove("close");
+      });
+      modeSwitch.addEventListener("click", () => {
+        body.classList.toggle("dark");
 
-      <div class="contenedor">
-        <img src="/client/src/media/explorar/imagines/foto2.jpg" alt="" />
-        <img src="/client/src/media/explorar/imagines/foto1.jpg" alt="" />
-        <video autoplay loop muted>
-          <source src="/client/src/media/explorar/short2.mp4" type="video/mp4">
-        </video>
-        <img src="/client/src/media/explorar/imagines/foto3.jpg" alt="" />
-        <video autoplay loop muted>
-          <source src="/client/src/media/explorar/short3.mp4" type="video/mp4">
-        </video>
-        <img src="/client/src/media/explorar/imagines/foto4.jpg" alt="" />
-        <img src="/client/src/media/explorar/imagines/foto5.jpg" alt="" />
-        <video autoplay loop muted>
-          <source src="/client/src/media/explorar/short4.mp4" type="video/mp4">
-        </video>
-        <img src="/client/src/media/explorar/imagines/foto6.jpg" alt="" />
-        <img src="/client/src/media/explorar/imagines/foto7.jpg" alt="" />
-        <video autoplay loop muted>
-          <source src="/client/src/media/explorar/short5.mp4" type="video/mp4">
-        </video>
-        <video autoplay loop muted>
-          <source src="/client/src/media/explorar/shorts6.mp4" type="video/mp4">
-        </video>
-        <img src="/client/src/media/explorar/imagines/foto8.jpg" alt="" />
-        <img src="/client/src/media/explorar/imagines/foto9.jpg" alt="" />
-        <img src="/client/src/media/explorar/imagines/foto10.jpg" alt="" />
-        <video autoplay loop muted>
-          <source src="/client/src/media/explorar/short7.mp4" type="video/mp4">
-        </video>
-        <video autoplay loop muted>
-          <source src="/client/src/media/explorar/short8.mp4" type="video/mp4">
-        </video>
-        <img src="/client/src/media/explorar/imagines/foto11.jpg" alt="" />
-        <img src="/client/src/media/explorar/imagines/foto12.jpg" alt="" />
-        <img src="/client/src/media/explorar/imagines/foto13.jpg" alt="" />
-        
-        <img src="/client/src/media/explorar/imagines/foto14.jpg" alt="" />
-        <img src="/client/src/media/explorar/imagines/foto15.jpg" alt="" />
-        <img src="/client/src/media/explorar/imagines/foto16.jpg" alt="" />
-        
-        
-      </div>
+        if (body.classList.contains("dark")) {
+          modeText.innerText = "Light mode";
+        } else {
+          modeText.innerText = "Dark mode";
+        }
+      });
+    </script>
+
+    <div class="contenedor">
+      <img src="/client/src/media/explorar/imagines/foto2.jpg" alt="" />
+      <img src="/client/src/media/explorar/imagines/foto1.jpg" alt="" />
+      <video autoplay loop muted>
+        <source src="/client/src/media/explorar/short2.mp4" type="video/mp4" />
+      </video>
+      <img src="/client/src/media/explorar/imagines/foto3.jpg" alt="" />
+      <video autoplay loop muted>
+        <source src="/client/src/media/explorar/short3.mp4" type="video/mp4" />
+      </video>
+      <img src="/client/src/media/explorar/imagines/foto4.jpg" alt="" />
+      <img src="/client/src/media/explorar/imagines/foto5.jpg" alt="" />
+      <video autoplay loop muted>
+        <source src="/client/src/media/explorar/short4.mp4" type="video/mp4" />
+      </video>
+      <img src="/client/src/media/explorar/imagines/foto6.jpg" alt="" />
+      <img src="/client/src/media/explorar/imagines/foto7.jpg" alt="" />
+      <video autoplay loop muted>
+        <source src="/client/src/media/explorar/short5.mp4" type="video/mp4" />
+      </video>
+      <video autoplay loop muted>
+        <source src="/client/src/media/explorar/shorts6.mp4" type="video/mp4" />
+      </video>
+      <img src="/client/src/media/explorar/imagines/foto8.jpg" alt="" />
+      <img src="/client/src/media/explorar/imagines/foto9.jpg" alt="" />
+      <img src="/client/src/media/explorar/imagines/foto10.jpg" alt="" />
+      <video autoplay loop muted>
+        <source src="/client/src/media/explorar/short7.mp4" type="video/mp4" />
+      </video>
+      <video autoplay loop muted>
+        <source src="/client/src/media/explorar/short8.mp4" type="video/mp4" />
+      </video>
+      <img src="/client/src/media/explorar/imagines/foto11.jpg" alt="" />
+      <img src="/client/src/media/explorar/imagines/foto12.jpg" alt="" />
+      <img src="/client/src/media/explorar/imagines/foto13.jpg" alt="" />
+
+      <img src="/client/src/media/explorar/imagines/foto14.jpg" alt="" />
+      <img src="/client/src/media/explorar/imagines/foto15.jpg" alt="" />
+      <img src="/client/src/media/explorar/imagines/foto16.jpg" alt="" />
+    </div>
   </body>
 </html>
