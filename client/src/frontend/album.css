@@ -503,7 +503,7 @@
   .Contenedor-info{
     width: 98.5%;
     height: 30%;
-    background-color: red;
+    background-color: transparent;
     margin-top: 30px;
     margin-left: 10px;
     display: flex;
@@ -513,23 +513,24 @@
   .Contenedor-Musica{
     width: 98.5%;
     height: 70%;
-    background-color: blue;
+    background-color: transparent;
     margin-left: 10px;
-    display: flex;
     flex-direction:row;
   }
   .contenedor{
     width: 98.5%;
     height: 100%;
-    background-color: green;
+    background-color: rgba(248, 248, 248, 0.2);
     margin-left: 10px;
+    margin-top: 20px;
     display: flex;
     flex-direction:column;
+    border-radius: 18px;
   }
   .cont-img{
       width: 15%;
       height: 80%;
-      background-color: yellow;
+      background-color: transparent;
       margin-left: 10px;
       margin-top: 20px;
       display: flex;
@@ -538,9 +539,54 @@
   .cont-text{
     width: 40%;
     height: 80%;
-    background-color: white;
+    background-color: transparent;
     margin-left: 10px;
     margin-top: 20px;
     display: flex;
     border-radius: 18px;
+    display: flex;
+    flex-direction:column;
+}
+.Musica1{
+    width: 98%;
+    height: 7%;
+    background-color: rgba(248, 248, 248, 0.603);
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline-end: 15px;
+    padding-inline-start: 15px;
+}
+.Musica2{
+  width: 98%;
+  height: 7%;
+  background-color: rgba(7, 7, 7, 0.075);
+  margin-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline-end: 15px;
+  padding-inline-start: 15px;
+}
+
+.Musica1:hover, .Musica2:hover{
+  /* Estilos cuando el mouse está sobre el contenedor */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.993); /* Sombra en el contenedor */
+}
+.Boton{
+  width: 17%;
+  height: 20%;
+  background-color: rgba(7, 7, 7, 0.075);
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline-start: 10px;
+  border-radius: 18px;
+  text-align: center;
+}
+.Boton:hover{
+  /* Estilos cuando el mouse está sobre el contenedor */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.993); /* Sombra en el contenedor */
 }

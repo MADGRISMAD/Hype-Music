@@ -1,6 +1,5 @@
 import React from 'react';
 
-import './App.css';
 import { useState, useEffect } from 'react';
 
 // functions
