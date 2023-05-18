@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <script>
+    function flipCard(card) {
+      card.classList.toggle('flipped');
+    }
     const container = document.querySelector('.slider-container');
     const slides = Array.from(document.querySelectorAll('.slide'));
     let currentIndex = 0;
