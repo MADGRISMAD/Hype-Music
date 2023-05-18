@@ -207,6 +207,7 @@ img {
   .navbar-menu li a:hover {
   color: #816797; /* Color del texto del menú al pasar el cursor por encima */
   }
+
   
   /* Estilos para las tarjetas */
   img {
@@ -214,13 +215,14 @@ img {
   height: auto;
   vertical-align: middle;
   }
+
   
   .cards-grid {
   display: flex;
   justify-content: center;
   align-items:center; 
   }
-  /* Google Font Import - Poppins */
+/* Google Font Import - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 *{
     margin: 0;
@@ -566,12 +568,3 @@ body.dark .home .text{
   width: 40px; /* Ajusta el tamaño del logo cuando el menú se cierra */
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: rgba(255, 255, 255, 0.9);
-}
