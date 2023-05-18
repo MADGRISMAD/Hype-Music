@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1B2430;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+section .imgbx {
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+section .imgbx:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(225deg, #ffffff, rgba(0, 110, 255, 0.9));
+    z-index: 1;
+    mix-blend-mode: screen;
+}
+
+section .imgbx img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section .contentbx {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+section .contentbx .formbx {
+    width: 50%;
+    background-color: #1B2430;
+    padding: 40px;
+    margin: 50px;
+    animation: fade-in 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login .formbx,
+.register .formbx {
+    width: 50%;
+    background-color: #1B2430;
+    padding: 40px;
+    margin: 50px;
+    animation: fade-in 0.5s ease-in-out;
+}
+
+
+section .contentbx .formbx h2 {
+    color: #D6D5A8;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 4px solid rgba(27, 36, 48, 0.9);
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+section .contentbx .formbx .inputbx {
+    margin-bottom: 20px;
+}
+
+section .contentbx .formbx .inputbx span {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #D6D5A8;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+section .contentbx .formbx .inputbx input {
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    font-weight: 400;
+    border: 1px solid #D6D5A8;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #D6D5A8;
+    background: transparent;
+    border-radius: 30px;
+}
+
+section .contentbx .formbx .inputbx input[type="submit"] {
+    background: #51557E;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+section .contentbx .formbx .inputbx input[type="submit"]:hover {
+    background: #51557E;
+}
+
+section .contentbx .formbx .remember {
+    margin-bottom: 10px;
+    color: #D6D5A8;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+section .contentbx .formbx .inputbx p {
+    color: #D6D5A8;
+}
+
+section .contentbx .formbx .inputbx p a {
+    color: #51557E;
+}
+
+section .contentbx .formbx h3 {
+    color: #D6D5A8;
+    text-align: center;
+    margin: 80px 0 10px;
+    font-weight: 500;
+}
+
+section .contentbx .formbx .sci {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .contentbx .formbx .sci li {
+    list-style: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D6D5A8;
+    border-radius: 50%;
+    margin: 0 7px;
+    cursor: pointer;
+}
+
+section .contentbx .formbx .sci li:hover {
+    background: rgba(27, 36, 48, 0.9);
+}
+
+section .contentbx .formbx .sci li img {
+    transform: scale(0.5);
+    filter: invert(1);
+}
+
+@media (max-width: 768px) {
+    section .imgbx {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    section .contentbx {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    section .contentbx .formbx {
+        width: 100%;
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.9);
+        margin: 50px;
+    }
+}
+
+section .videobx {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+section .videobx:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+section .videobx video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+section .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+section .logo img {
+  max-height: 100%;
+  max-width: 100%;
+}

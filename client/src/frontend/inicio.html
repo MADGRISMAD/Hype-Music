@@ -1,105 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="style_slider.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="estilos.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <title>Inicio</title>
-</head>
-<body>
-    <nav class="navbar">
-        <div class="navbar-logo">
-          <img src="logo.png" alt="Logo de la empresa">
+  </head>
+  <body>
+    <nav class="sidebar close">
+      <header>
+        <div class="image-text">
+          <span class="image">
+            <img src="/client/src/frontend/logo.png" alt="" />
+          </span>
         </div>
-        <ul class="navbar-menu">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#explorar">Explorar</a></li>
-          <li><a href="#perfil">Perfil</a></li>
-          <li><a href="#ajustes">Ajustes</a></li>
-        </ul>
-      </nav>
-      
+        <i class="bx bx-chevron-right toggle"></i>
+      </header>
+      <div class="menu-bar">
+        <div class="menu">
+          <li class="search-box">
+            <i class="bx bx-search icon"></i>
+            <input type="text" placeholder="Buscar..." />
+          </li>
+          <ul class="menu-links">
+            <li class="nav-link">
+              <a href="/client/src/frontend/inicio.html">
+                <i class="bx bx-home-alt icon"></i>
+                <span class="text nav-text">Inicio</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="/client/src/frontend/explorar.html">
+                <i class="bx bx-bar-chart-alt-2 icon"></i>
+                <span class="text nav-text">Descubrir</span>
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+        <div class="bottom-content">
+          <li class="">
+            <a href="#">
+              <i class="bx bx-log-out icon"></i>
+              <span class="text nav-text">Salir</span>
+            </a>
+          </li>
+          <li class="mode">
+            <div class="sun-moon">
+              <i class="bx bx-moon icon moon"></i>
+              <i class="bx bx-sun icon sun"></i>
+            </div>
+            <span class="mode-text text">Modo Oscuro</span>
+            <div class="toggle-switch">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </div>
+      </div>
+    </nav>
+
+    <section class="home"></section>
+    <script>
+      const body = document.querySelector("body"),
+        sidebar = body.querySelector("nav"),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
+      toggle.addEventListener("click", () => {
+        sidebar.classList.toggle("close");
+      });
+      searchBtn.addEventListener("click", () => {
+        sidebar.classList.remove("close");
+      });
+      modeSwitch.addEventListener("click", () => {
+        body.classList.toggle("dark");
+
+        if (body.classList.contains("dark")) {
+          modeText.innerText = "Light mode";
+        } else {
+          modeText.innerText = "Dark mode";
+        }
+      });
+    </script>
+    <div>
       <div class="slider">
         <div class="slider-container">
           <div class="slide">
-            <img src="1.jpg" alt="Imagen 1">
+            <img src="../media/Inicio/1.jpg" />
             <div class="slider-navigation">
-                <label for="radio1" class="m-btn" onclick=" Slide1()"></label>
-                <label for="radio2" class="m-btn" onclick=" Slide2()"></label>
-                <label for="radio3" class="m-btn" onclick=" Slide3()"></label>
-              </div>
+              <label for="radio1" class="m-btn" onclick=" Slide1()"></label>
+              <label for="radio2" class="m-btn" onclick=" Slide2()"></label>
+              <label for="radio3" class="m-btn" onclick=" Slide3()"></label>
+            </div>
           </div>
           <div class="slide">
-            <img src="2.jpg" alt="Imagen 2">
+            <img src="../media/Inicio/2.jpg" />
             <div class="slider-navigation">
-                <label for="radio1" class="m-btn" onclick=" Slide1()"></label>
-                <label for="radio2" class="m-btn" onclick=" Slide2()"></label>
-                <label for="radio3" class="m-btn" onclick=" Slide3()"></label>
-              </div>
+              <label for="radio1" class="m-btn" onclick=" Slide1()"></label>
+              <label for="radio2" class="m-btn" onclick=" Slide2()"></label>
+              <label for="radio3" class="m-btn" onclick=" Slide3()"></label>
+            </div>
           </div>
           <div class="slide">
-            <img src="3.jpg" alt="Imagen 3">
+            <img src="../media/Inicio/3.jpg" />
             <div class="slider-navigation">
-                <label for="radio1" class="m-btn" onclick=" Slide1()"></label>
-                <label for="radio2" class="m-btn" onclick=" Slide2()"></label>
-                <label for="radio3" class="m-btn" onclick=" Slide3()"></label>
-              </div>
+              <label for="radio1" class="m-btn" onclick=" Slide1()"></label>
+              <label for="radio2" class="m-btn" onclick=" Slide2()"></label>
+              <label for="radio3" class="m-btn" onclick=" Slide3()"></label>
+            </div>
           </div>
         </div>
       </div>
 
+      <section class="canciones">
+        <h2>Escuchados Recientemente</h2>
+        <div class="album-container">
+          <div class="album">
+            <img
+              src="/client/src/media/Inicio/Cards/1.jpg"
+              alt="Carátula del álbum 1"
+            />
+            <h3>Divine Femenine - Mac Miller</h3>
+          </div>
+          <div class="album">
+            <img
+              src="/client/src/media/Inicio/Cards/2.jpg"
+              alt="Carátula del álbum 2"
+            />
+            <h3>The Melodic Blue - Baby Keem</h3>
+          </div>
+          <div class="album">
+            <img
+              src="/client/src/media/Inicio/Cards/3.jpg"
+              alt="Carátula del álbum 3"
+            />
+            <h3>DAMN.- Kendrick Lamar</h3>
+          </div>
+          <div class="album">
+            <img
+              src="/client/src/media/Inicio/Cards/4.jpg"
+              alt="Carátula del álbum 4"
+            />
+            <h3>honestly nevermind - Drake</h3>
+          </div>
+          <div class="album">
+            <img
+              src="/client/src/media/Inicio/Cards/5.jpg"
+              alt="Carátula del álbum 5"
+            />
+            <h3>Lover - Taylor Swift</h3>
+          </div>
+          <div class="album">
+            <img
+              src="/client/src/media/Inicio/Cards/6.jpg"
+              alt="Carátula del álbum 6"
+            />
+            <h3>S.O.S - SZA</h3>
+          </div>
+        </div>
+      </section>
+
+      <section class="reels">
+        <h2>Reels</h2>
+        <div class="reels-container">
+          <div class="reel">
+            <video src="/client/src/media/explorar/short6.mp4" autoplay loop muted></video>
+            <h3>Divine Femenine - Mac Miller</h3>
+          </div>
+          <div class="reel">
+            <video src="/client/src/media/explorar/shorts1.mp4" autoplay loop muted></video>
+            <h3>The Melodic Blue - Baby Keem</h3>
+          </div>
+          <div class="reel">
+            <video src="/client/src/media/explorar/short3.mp4" autoplay loop muted></video>
+            <h3>DAMN.- Kendrick Lamar</h3>
+          </div>
+          <div class="reel">
+            <video src="/client/src/media/explorar/short4.mp4" autoplay loop muted></video>
+            <h3>honestly nevermind - Drake</h3>
+          </div>
+          <div class="reel">
+            <video src="/client/src/media/explorar/short5.mp4" autoplay loop muted></video>
+            <h3>Lover - Taylor Swift</h3>
+          </div>
+          <div class="reel">
+            <video src="/client/src/media/explorar/short6.mp4" autoplay loop muted></video>
+            <h3>S.O.S - SZA</h3>
+          </div>
+        </div>
+      </section>
+      
+      
 
       <script>
-        const container = document.querySelector('.slider-container');
-        const slides = Array.from(document.querySelectorAll('.slide'));
+        function flipCard(card) {
+          card.classList.toggle("flipped");
+        }
+        const container = document.querySelector(".slider-container");
+        const slides = Array.from(document.querySelectorAll(".slide"));
         let currentIndex = 0;
         let intervalId;
-        
+
         function goToSlide(index) {
           currentIndex = index;
           const slideWidth = slides[currentIndex].offsetWidth;
           const translateX = -currentIndex * slideWidth;
           container.style.transform = `translateX(${translateX}px)`;
         }
-        
-        function Slide1() {  
+
+        function Slide1() {
           goToSlide(0);
           startSlider();
         }
-        
-        function Slide2() {  
+
+        function Slide2() {
           goToSlide(1);
           startSlider();
         }
-        
-        function Slide3() {  
+
+        function Slide3() {
           goToSlide(2);
           startSlider();
         }
-        
+
         function nextSlide() {
           const nextIndex = (currentIndex + 1) % slides.length;
           goToSlide(nextIndex);
         }
-        
+
         function startSlider() {
           clearInterval(intervalId); // Limpia el intervalo anterior antes de iniciar uno nuevo
           intervalId = setInterval(nextSlide, 2000); // Cambia la diapositiva cada 2 segundos (2000 ms)
         }
-        
+
         function stopSlider() {
           clearInterval(intervalId);
         }
-        
+
         startSlider(); // Inicia el slider automáticamente
-        
+
         // Agrega los siguientes event listeners para pausar/reanudar el slider cuando se haga clic en las diapositivas o en los botones de navegación
-        container.addEventListener('mouseenter', stopSlider);
-        container.addEventListener('mouseleave', startSlider);
-        document.querySelector('.slider-navigation').addEventListener('mouseenter', stopSlider);
-        document.querySelector('.slider-navigation').addEventListener('mouseleave', startSlider);
-    </script>    
-</body>
+        container.addEventListener("mouseenter", stopSlider);
+        container.addEventListener("mouseleave", startSlider);
+        document
+          .querySelector(".slider-navigation")
+          .addEventListener("mouseenter", stopSlider);
+        document
+          .querySelector(".slider-navigation")
+          .addEventListener("mouseleave", startSlider);
+      </script>
+    </div>
+  </body>
 </html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="busqueda.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Inicio</title>
+    <script>
+      window.addEventListener("scroll", function () {
+        var navbar = document.getElementById("navbar");
+        if (window.scrollY > 0) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+      // Obtener los botones y los elementos <img> de los GIFs
+      const playPauseButton = document.getElementById("play-pause-button");
+      const previousButton = document.getElementById("previous-button");
+      const nextButton = document.getElementById("next-button");
+      const playGif = document.querySelector(
+        '.navbar-player img[alt="Reproducir"]'
+      );
+      const previousGif = document.querySelector(
+        '.navbar-player img[alt="Anterior"]'
+      );
+      const nextGif = document.querySelector(
+        '.navbar-player img[alt="Siguiente"]'
+      );
+
+      // Agregar un event listener a los botones
+      playPauseButton.addEventListener("click", togglePlayPause);
+      previousButton.addEventListener("click", playPrevious);
+      nextButton.addEventListener("click", playNext);
+
+      // Función para alternar la reproducción y pausa del GIF
+      function togglePlayPause() {
+        if (playGif.classList.contains("playing")) {
+          playGif.classList.remove("playing");
+        } else {
+          playGif.classList.add("playing");
+        }
+      }
+
+      // Funciones para reproducir el GIF anterior y siguiente
+      function playPrevious() {
+        previousGif.classList.add("playing");
+      }
+
+      function playNext() {
+        nextGif.classList.add("playing");
+      }
+    </script>
+  </head>
+  <body>
+    <nav class="sidebar close">
+      <header>
+        <div class="image-text">
+          <span class="image">
+            <img src="../client/src/frontend/logo.png" alt="">
+          </span>
+        </div>
+        <i class="bx bx-chevron-right toggle"></i>
+      </header>
+      <div class="menu-bar">
+        <div class="menu">
+          <li class="search-box">
+            <i class="bx bx-search icon"></i>
+            <input type="text" placeholder="Search..." />
+          </li>
+          <ul class="menu-links">
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-home-alt icon"></i>
+                <span class="text nav-text">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-bar-chart-alt-2 icon"></i>
+                <span class="text nav-text">Revenue</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-bell icon"></i>
+                <span class="text nav-text">Notifications</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-pie-chart-alt icon"></i>
+                <span class="text nav-text">Analytics</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-heart icon"></i>
+                <span class="text nav-text">Likes</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-wallet icon"></i>
+                <span class="text nav-text">Wallets</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="bottom-content">
+          <li class="">
+            <a href="#">
+              <i class="bx bx-log-out icon"></i>
+              <span class="text nav-text">Logout</span>
+            </a>
+          </li>
+          <li class="mode">
+            <div class="sun-moon">
+              <i class="bx bx-moon icon moon"></i>
+              <i class="bx bx-sun icon sun"></i>
+            </div>
+            <span class="mode-text text">Dark mode</span>
+            <div class="toggle-switch">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </div>
+      </div>
+    </nav>
+    <section class="home" >
+      <div class="contenedor-TOP" >
+        <h2>TOPS</h2>
+        <div class="Top"> 
+        <div class="cont-imagen">
+          <img src="TOP/Acrostico.jpg" alt="" height="120%" width="120"> 
+        </div>
+        <div class="cont-text">
+          <p> Acrostico - Singel<br>
+            Album - Shakira
+          </p>
+        </div>
+        </div>
+        <div class="Top"> 
+          <div class="cont-imagen">
+            <img src="TOP/bizarrap.jpg" alt="" height="120%" width="120"> 
+          </div>
+          <div class="cont-text">
+            <p> Shakira: Bzrp Music Sessions, Vol. 53 - Single<br>
+              Bizarrap Shakira
+            </p>
+          </div>
+          </div>
+          <div class="Top"> 
+            <div class="cont-imagen">
+              <img src="TOP/wakawaka.jpg" alt="" height="120%" width="120"> 
+            </div>
+            <div class="cont-text">
+              <p> Waka-Waka<br>
+                Shakira
+              </p>
+            </div>
+            </div>
+      </div>
+
+      <div class="contenedor-Albumes">
+        <h2>Albumes</h2>
+        <div class="album">
+          <div class="image-album">
+            <img src="album/grandes.jpg" alt="" height="120%" width="120"> 
+          </div>
+          <div class="album-txt">
+            <p> Grandes Exitos<br>
+              Shakira
+            </p>
+          </div>
+        </div>
+        <div class="album">
+          <div class="image-album">
+            <img src="TOP/Acrostico.jpg" alt="" height="120%" width="120"> 
+          </div>
+          <div class="album-txt">
+            <p> Acrostico - Singel<br>
+              Shakira
+            </p>
+          </div>
+        </div>
+        <div class="album">
+          <div class="image-album">
+            <img src="album/pies.jpg" alt="" height="120%" width="120"> 
+          </div>
+          <div class="album-txt">
+            <p> Pies Descalsos<br>
+              Shakira
+            </p>
+          </div>
+        </div>
+        <div class="album">
+          <div class="image-album">
+            <img src="album/grandes.jpg" alt="" height="120%" width="120"> 
+          </div>
+          <div class="album-txt">
+            <p> Acrostico - Singel<br>
+              Album - Shakira
+            </p>
+          </div>
+        </div>
+        <div class="album">
+          <div class="image-album">
+            <img src="album/ladrones.jpg" alt="" height="120%" width="120"> 
+          </div>
+          <div class="album-txt">
+            <p> Donde estan los ladrones<br>
+              Shakira
+            </p>
+          </div>
+        </div>
+        <div class="album">
+          <div class="image-album">
+            <img src="album/oral.jpg" alt="" height="120%" width="120"> 
+          </div>
+          <div class="album-txt">
+            <p> Fijacion Oral Vol.1 <br>
+              Shakira
+            </p>
+          </div>
+        </div>
+        <div class="album">
+          <div class="image-album">
+            <img src="album/dorado.jpg" alt="" height="120%" width="120"> 
+          </div>
+          <div class="album-txt">
+            <p> El Dorado<br>
+              Shakira
+            </p>
+          </div>
+        </div>
+        <div class="album">
+          <div class="image-album">
+            <img src="album/sol.jpg" alt="" height="120%" width="120"> 
+          </div>
+          <div class="album-txt">
+            <p> Sale el Sol<br>
+              Shakira
+            </p>
+          </div>
+        </div>          
+      </div>
+
+      <div class="contenedor-Canciones">
+        <h2>Canciones</h2>
+      <div class="contenedorMusical">
+        <div class="contenedor2">
+          <div class="Cancion-contenedor">
+            <div class="image-cancio">
+              <img src="musica/felicito.jpg" alt="" height="100%" width="120"> 
+            </div>
+            <div class="cancion-txt">
+              <h4 style="font-size: x-small;">
+                Te Felicito<br>
+                Shakira
+              </h4>
+            </div>
+          </div>
+          <div class="Cancion-contenedor">
+            <div class="image-cancio">
+              <img src="musica/loba.jpg"alt="" height="100%" width="120"> 
+            </div>
+            <div class="cancion-txt">
+              <h4 style="font-size: x-small;">
+                Loba<br>
+                Shakira
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div class="contenedor2">
+          <div class="Cancion-contenedor">
+            <div class="image-cancio">
+              <img src="musica/monotonia.jpg" alt="" height="100%" width="120"> 
+            </div>
+            <div class="cancion-txt">
+              <h4 style="font-size: x-small;">
+                Monotonia<br>
+                Shakira
+              </h4>
+            </div>
+          </div>
+          <div class="Cancion-contenedor">
+            <div class="image-cancio">
+              <img src="musica/antologia.jpg" alt="" height="100%" width="120"> 
+            </div>
+            <div class="cancion-txt">
+              <h4 style="font-size: x-small;">
+                Antologia<br>
+                Shakira
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contenedorMusical">
+        <div class="contenedor2">
+          <div class="Cancion-contenedor">
+            <div class="image-cancio">
+              <img src="musica/bici.jpg" alt="" height="100%" width="120"> 
+            </div>
+            <div class="cancion-txt">
+              <h4 style="font-size: x-small;">
+                La Bicicleta<br>
+                Shakira
+              </h4>
+            </div>
+          </div>
+          <div class="Cancion-contenedor">
+            <div class="image-cancio">
+              <img src="musica/ciega.jpg" alt="" height="100%" width="120"> 
+            </div>
+            <div class="cancion-txt">
+              <h4 style="font-size: x-small;">
+                Ciega, Sordomuda<br>
+                Shakira
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div class="contenedor2">
+          <div class="Cancion-contenedor">
+            <div class="image-cancio">
+              <img src="musica/aqui.jpg" alt="" height="100%" width="120"> 
+            </div>
+            <div class="cancion-txt">
+              <h4 style="font-size: x-small;">
+                Estoy Aqui<br>
+                Shakira
+              </h4>
+            </div>
+          </div>
+          <div class="Cancion-contenedor">
+            <div class="image-cancio">
+              <img src="musica/perro.jpg" alt="" height="100%" width="120"> 
+            </div>
+            <div class="cancion-txt">
+              <h4 style="font-size: x-small;">
+                Perro Fiel<br>
+                Shakira
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="contenedor-reels">
+        <h2>Reels</h2>
+        <div class="reels">
+          <video src="reel/short1.mp4" autoplay loop muted></video>
+        </div>
+        <div class="reels">
+          <video src="reel/short2.mp4"  autoplay loop muted>
+        </div>
+        <div class="reels">
+          <video src="reel/short3.mp4" autoplay loop muted></video>
+        </div>
+        <div class="reels">
+          <video src="reel/short4.mp4" autoplay loop muted></video>
+        </div>
+        <div class="reels">
+          <video src="TOP/short5.mp4" autoplay loop muted></video>
+        </div>
+        <div class="reels">
+          <video src="reel/short6.mp4" autoplay loop muted></video>
+        </div>
+        <div class="reels">
+          <video src="reel/short7.mp4" autoplay loop muted></video>
+        </div>
+        <div class="reels">
+          <video src="reel/short8.mp4" autoplay loop muted></video>
+        </div>
+        <div class="reels">
+          <video src="reel/short9.mp4"autoplay loop muted></video>
+        </div>
+      </div>
+      <div class="text">
+      </div>
+    </section>
+    <script>
+      const body = document.querySelector("body"),
+        sidebar = body.querySelector("nav"),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
+      toggle.addEventListener("click", () => {
+        sidebar.classList.toggle("close");
+      });
+      searchBtn.addEventListener("click", () => {
+        sidebar.classList.remove("close");
+      });
+      modeSwitch.addEventListener("click", () => {
+        body.classList.toggle("dark");
+
+        if (body.classList.contains("dark")) {
+          modeText.innerText = "Light mode";
+        } else {
+          modeText.innerText = "Dark mode";
+        }
+      });
+    </script>
+    <!-- aqui comienza tu codigo -->
+    
+  </body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <title>Login</title>
+    <style>
+      .form-wrapper {
+        position: relative;
+      }
+
+      .form-wrapper form {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      .form-wrapper form.out {
+        opacity: 0;
+      }
+    </style>
+    <script>
+      function mostrarFormulario(formulario) {
+        var formLogin = document.getElementById("form-login");
+        var formRegistro = document.getElementById("form-registro");
+        var linkLogin = document.getElementById("link-login");
+        var linkRegistro = document.getElementById("link-registro");
+
+        if (formulario === "login") {
+          formLogin.style.display = "block";
+          formRegistro.style.display = "none";
+          linkLogin.classList.add("active");
+          linkRegistro.classList.remove("active");
+        } else if (formulario === "registro") {
+          formLogin.style.display = "none";
+          formRegistro.style.display = "block";
+          linkLogin.classList.remove("active");
+          linkRegistro.classList.add("active");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <section>
+      <div class="videobx">
+        <video
+          src="/client/src/media/login/stock.mp4"
+          autoplay
+          loop
+          muted
+        ></video>
+      </div>
+
+      <div class="contentbx">
+        <div class="formbx">
+          <div class="logo">
+            <img src="/client/src/frontend/logo.png" alt="Logo" />
+          </div>
+          <h2 id="form-title">Inicia Sesion</h2>
+          <form id="form-login">
+            <div class="inputbx">
+              <span>Correo</span>
+              <input type="text" name="" />
+            </div>
+            <div class="inputbx">
+              <span>Contraseña</span>
+              <input type="password" name="" />
+            </div>
+            <div class="remember">
+              <label><input type="checkbox" />Recuerdame</label>
+            </div>
+            <div class="inputbx">
+              <input type="submit" value="Iniciar Sesion" name="" />
+            </div>
+            <div class="inputbx">
+              <p>
+                No tengo una cuenta
+                <a
+                  href="#"
+                  id="link-registro"
+                  onclick="mostrarFormulario('registro')"
+                  >Registrarse</a
+                >
+              </p>
+            </div>
+          </form>
+          <form id="form-registro" style="display: none">
+            <div class="inputbx">
+              <span>Nombre</span>
+              <input type="text" name="" />
+            </div>
+            <div class="inputbx">
+              <span>Correo</span>
+              <input type="text" name="" />
+            </div>
+            <div class="inputbx">
+              <span>Contraseña</span>
+              <input type="password" name="" />
+            </div>
+            <div class="remember">
+              <label><input type="checkbox" />Suscribirte al boletin</label>
+            </div>
+            <div class="inputbx">
+              <input type="submit" value="Registrate" name="" />
+            </div>
+            <div class="inputbx">
+              <p>
+                Ya tengo una cuenta
+                <a
+                  href="#"
+                  id="link-login"
+                  class="active"
+                  onclick="mostrarFormulario('login')"
+                  >Iniciar Sesión</a
+                >
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
