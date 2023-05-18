@@ -465,8 +465,9 @@ body.dark .home .text{
   height: 100vh;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   z-index: -1;
 }
 
@@ -499,3 +500,148 @@ body.dark .home .text{
   width: 40px; /* Ajusta el tamaño del logo cuando el menú se cierra */
 }
 
+.contenedor-TOP{
+  width: 98.5%;
+  height: 180px;
+  background-color: transparent;
+  margin-top: 30px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction:row;
+  border-radius: 18px;
+}
+.Top{
+  width: 30%;
+  height: 70%;
+  background-color: rgba(0,0,0,0.25);
+  margin-top: 20px;
+  margin-right: 25px;
+  display: flex;
+  flex-direction:row;
+  border-radius: 18px;
+}
+.cont-imagen{
+  width: 17%;
+  height: 60%;
+  background-color: transparent;
+  margin-top: 15px;
+  margin-left: 25px;
+  border-radius: 18px;
+}
+.cont-text{
+  width: 70%;
+  height: 50%;
+  background-color: transparent;
+  margin-top: 25px;
+  margin-left: 10px;
+  opacity: 1;
+}
+
+
+.contenedor-Albumes{
+  width: 98.5%;
+  height: 260px;
+  background-color: yellow;
+  margin-left: 10px;
+  display: flex;
+  flex-direction:row;
+}
+.album{
+  width: 10%;
+  height: 80%;
+  background-color: black;
+  margin-top: 25px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction:column;
+}
+.image-album{
+  width: 80%;
+  height: 50%;
+  background-color: white;
+  margin-top: 10px;
+  margin-left: 17px;
+  border-radius: 18px;
+}
+.album-txt{
+  width: 80%;
+  height: 20%;
+  background-color: white;
+  margin-top: 20px;
+  margin-left: 17px;
+}
+
+
+.contenedor-Canciones{
+  width: 98.5%;
+  height: 220px;;
+  background-color: red;
+  margin-left: 10px;
+  display: flex;
+  flex-direction:row;
+}
+
+.contenedorMusical{
+  width: 40%;
+  height: 80%;
+  background-color: black;
+  margin-top: 25px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction:row;
+}
+
+.Cancion-contenedor{
+  width: 90%;
+  height: 40%;
+  background-color: white;
+  margin-top: 10px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction:row;
+}
+
+
+.contenedor2{
+  width: 40%;
+  height: 90%;
+  background-color: transparent;
+  margin-top: 10px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction:column;
+}
+
+.image-cancio{
+  width: 18%;
+  height: 80%;
+  background-color: red;
+  margin-top: 5px;
+  margin-left: 5px;
+  border-radius: 18px;
+}
+.cancion-txt{
+  width: 70%;
+  height: 50%;
+  background-color: orange;
+  margin-top: 12px;
+  margin-left: 5px;
+}
+
+
+.contenedor-reels{
+  width: 98.5%;
+  height: 400px;
+  background-color: green;
+  margin-left: 10px;
+  display: flex;
+  flex-direction:row;
+}
+.reels{
+  width: 9%;
+  height: 85%;
+  background-color: red;
+  margin-top: 30px;
+  margin-left: 20px;
+  border-radius: 18px;
+}
