@@ -599,11 +599,13 @@ section.canciones {
 section h2 {
   padding-left: 45px;
   padding-bottom: 20px;
+  text-c
 
 }
 section {
   padding-top: 50px;
 }
+
 /* sombras para caratulas */
 .album img {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -623,3 +625,117 @@ section {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+.reels-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.reel {
+  width: calc(16.66% - 10px);
+  margin-bottom: 20px;
+}
+
+.reel video {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  
+}
+
+@media (max-width: 768px) {
+  .reel {
+    width: calc(25% - 10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .reel {
+    width: 50%;
+  }
+}
+img,
+video {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+img:hover,
+video:hover {
+  opacity: 0.8;
+  transform: translateY(-5px);
+  position: relative;
+}
+
+img:hover::after,
+video:hover::after {
+  content: 'Lorem ipsum dolor sit amet ';
+  display: block;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 10px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-5%);
+}
+
+
+/* Resto del código CSS anterior */
+
+/* Ajustes para los reels */
+.contenedor {
+  columns: 5;
+  column-gap: 15px;
+}
+
+.reel img,
+.reel video {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.reel img:hover,
+.reel video:hover {
+  opacity: 0.8;
+  transform: translateY(-5px);
+  position: relative;
+}
+
+.reel img:hover::after,
+.reel video:hover::after {
+  content: 'Lorem ipsum dolor sit amet';
+  display: block;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 10px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+  transform: translateX(-5%);
+}
+
+/* Resto del código CSS posterior */
+
+/* Ajustes para la imagen del perfil en el sidebar */
+.sidebar header .image-text .image {
+  min-width: 80px; /* Ajusta el ancho mínimo según sea necesario */
+  border-radius: 6px;
+}
+
+.sidebar header .image-text .image img {
+  width: 60px; /* Ajusta el tamaño de la imagen del perfil según sea necesario */
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.sidebar.close header .image-text .image img {
+  width: 40px; /* Ajusta el tamaño de la imagen del perfil cuando el menú se cierra */
+}
+
