@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <script>
+    function flipCard(card) {
+      card.classList.toggle('flipped');
+    }
+    const container = document.querySelector('.slider-container');
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    let currentIndex = 0;
+    let intervalId;
+    
+    function goToSlide(index) {
+      currentIndex = index;
+      const slideWidth = slides[currentIndex].offsetWidth;
+      const translateX = -currentIndex * slideWidth;
+      container.style.transform = `translateX(${translateX}px)`;
+    }
+    
+    function Slide1() {  
+      goToSlide(0);
+      startSlider();
+    }
+    
+    function Slide2() {  
+      goToSlide(1);
+      startSlider();
+    }
+    
+    function Slide3() {  
+      goToSlide(2);
+      startSlider();
+    }
+    
+    function nextSlide() {
+      const nextIndex = (currentIndex + 1) % slides.length;
+      goToSlide(nextIndex);
+    }
+    
+    function startSlider() {
+      clearInterval(intervalId); // Limpia el intervalo anterior antes de iniciar uno nuevo
+      intervalId = setInterval(nextSlide, 2000); // Cambia la diapositiva cada 2 segundos (2000 ms)
+    }
+    
+    function stopSlider() {
+      clearInterval(intervalId);
+    }
+    
+    startSlider(); // Inicia el slider automáticamente
+    
+    // Agrega los siguientes event listeners para pausar/reanudar el slider cuando se haga clic en las diapositivas o en los botones de navegación
+    container.addEventListener('mouseenter', stopSlider);
+    container.addEventListener('mouseleave', startSlider);
+    document.querySelector('.slider-navigation').addEventListener('mouseenter', stopSlider);
+    document.querySelector('.slider-navigation').addEventListener('mouseleave', startSlider);
+</script>  
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="style_slider.css">
+    <link rel="stylesheet" href="style_cards.css">
     <title>Inicio</title>
 </head>
 <body>
@@ -50,56 +105,18 @@
         </div>
       </div>
 
+      <div class="cards-grid">
+        <div class="flip-card" onclick="flipCard(this)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="../media/Inicio/Cards/abbey-road-the-beatles-1969.jpg"> 
+            </div>
+            <div class="flip-card-back">
+              Hola mundo
+            </div>
+          </div>
+        </div>
 
-      <script>
-        const container = document.querySelector('.slider-container');
-        const slides = Array.from(document.querySelectorAll('.slide'));
-        let currentIndex = 0;
-        let intervalId;
-        
-        function goToSlide(index) {
-          currentIndex = index;
-          const slideWidth = slides[currentIndex].offsetWidth;
-          const translateX = -currentIndex * slideWidth;
-          container.style.transform = `translateX(${translateX}px)`;
-        }
-        
-        function Slide1() {  
-          goToSlide(0);
-          startSlider();
-        }
-        
-        function Slide2() {  
-          goToSlide(1);
-          startSlider();
-        }
-        
-        function Slide3() {  
-          goToSlide(2);
-          startSlider();
-        }
-        
-        function nextSlide() {
-          const nextIndex = (currentIndex + 1) % slides.length;
-          goToSlide(nextIndex);
-        }
-        
-        function startSlider() {
-          clearInterval(intervalId); // Limpia el intervalo anterior antes de iniciar uno nuevo
-          intervalId = setInterval(nextSlide, 2000); // Cambia la diapositiva cada 2 segundos (2000 ms)
-        }
-        
-        function stopSlider() {
-          clearInterval(intervalId);
-        }
-        
-        startSlider(); // Inicia el slider automáticamente
-        
-        // Agrega los siguientes event listeners para pausar/reanudar el slider cuando se haga clic en las diapositivas o en los botones de navegación
-        container.addEventListener('mouseenter', stopSlider);
-        container.addEventListener('mouseleave', startSlider);
-        document.querySelector('.slider-navigation').addEventListener('mouseenter', stopSlider);
-        document.querySelector('.slider-navigation').addEventListener('mouseleave', startSlider);
-    </script>    
+ 
 </body>
 </html>
